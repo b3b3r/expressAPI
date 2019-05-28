@@ -87,7 +87,6 @@ router.put('/api/people', (req, res) => {
   if (idPeople) {
     connection.query(`UPDATE sport SET ? WHERE id = ${idPeople}`, [formData, idPeople], (err) => {
       if (err) {
-        console.log(err);
         res.status(500).send('Erreur lors de la modification');
       } else {
         res.sendStatus(200);
